@@ -8,7 +8,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.ConfigurableEnvironment;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"org.fufeng.train.member"})
+@ComponentScan(basePackages = {"org.fufeng.train"})
 public class MemberApplication {
 
     private static final Logger LOG = LoggerFactory.getLogger(MemberApplication.class);
