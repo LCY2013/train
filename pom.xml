@@ -22,6 +22,13 @@
         <spring-cloud.version>2023.0.0</spring-cloud.version>
         <fastjson2.version>2.0.47</fastjson2.version>
         <hutool.version>5.8.26</hutool.version>
+        <mybatis-spring-boot.version>3.0.3</mybatis-spring-boot.version>
+        <mysql.version>8.0.33</mysql.version>
+        <pagehelper-spring-boot.version>2.1.0</pagehelper-spring-boot.version>
+        <spring-cloud-alibaba-dependencies.version>2023.0.0.0-RC1</spring-cloud-alibaba-dependencies.version>
+        <redisson-spring-boot.version>3.27.2</redisson-spring-boot.version>
+        <kaptcha.version>2.3.2</kaptcha.version>
+        <rocketmq-spring-boot.version>2.3.0</rocketmq-spring-boot.version>
     </properties>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -64,6 +71,63 @@
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
+            </dependency>
+
+            <!-- 集成mybatis-->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${mybatis-spring-boot.version}</version>
+            </dependency>
+            <!-- 集成mysql连接 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper-spring-boot.version}</version>
+            </dependency>
+
+            <!-- spring cloud alibaba  https://github.com/alibaba/spring-cloud-alibaba/wiki/%E7%89%88%E6%9C%AC%E8%AF%B4%E6%98%8E
+            https://github.com/alibaba/spring-cloud-alibaba/blob/2022.x/README-zh.md
+            -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba-dependencies.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!--至少3.18.0版本，才支持spring boot 3-->
+            <!--升级到3.20.0，否则打包生产会报错：Could not initialize class org.redisson.spring.data.connection.RedissonConnection-->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson-spring-boot.version}</version>
+            </dependency>
+
+            <!-- 图形验证码 升级到JDK17后，排除掉javax.servlet-api包 -->
+            <dependency>
+                <groupId>com.github.penggle</groupId>
+                <artifactId>kaptcha</artifactId>
+                <version>${kaptcha.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>javax.servlet</groupId>
+                        <artifactId>javax.servlet-api</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-spring-boot-starter</artifactId>
+                <version>${rocketmq-spring-boot.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
