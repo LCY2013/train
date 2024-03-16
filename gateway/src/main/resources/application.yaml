@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8000
 
 #  路由转发，将/member/..的请求转发到member模块
 spring:
@@ -8,7 +8,7 @@ spring:
       routes:
         - id: member_route
           uri:
-            http://127.0.0.1:8081
+            http://127.0.0.1:8001
             # lb://member
           predicates:
             - Path=/member/**

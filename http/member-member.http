@@ -1,15 +1,15 @@
-GET http://localhost:8080/member/member/count
+GET http://localhost:8000/member/member/count
 Accept: application/json
 token: 123
 
 ###
-POST http://localhost:8080/member/member/register
+POST http://localhost:8000/member/member/register
 Content-Type: application/x-www-form-urlencoded
 
 mobile=12345678
 
 ###
-POST http://localhost:8080/member/member/send-code
+POST http://localhost:8000/member/member/send-code
 Content-Type: application/json
 
 {
@@ -17,7 +17,7 @@ Content-Type: application/json
 }
 
 ###
-POST http://localhost:8080/member/member/login
+POST http://localhost:8000/member/member/login
 Content-Type: application/json
 
 {
