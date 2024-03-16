@@ -1,4 +1,4 @@
-package org.fufeng.train.gateway;
+package org.fufeng.train.gateway.config;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
