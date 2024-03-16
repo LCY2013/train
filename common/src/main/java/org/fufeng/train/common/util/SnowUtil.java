@@ -18,7 +18,7 @@ public class SnowUtil {
         String ip = NetUtil.localIpv4s().stream().
                 filter(ipAddress ->
                         !NetUtil.isInnerIP(ipAddress)).findFirst().orElse("192.168.0.1");
-        workerId = NetUtil.ipv4ToLong(ip);
+        workerId = NetUtil.ipv4ToLong(ip)%32;
     }
 
     public static long getSnowflakeNextId() {
