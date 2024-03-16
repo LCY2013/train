@@ -20,7 +20,7 @@ public class LoginMemberFilter implements Ordered, GlobalFilter {
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         String path = exchange.getRequest().getURI().getPath();
 
-        // 排除不需要拦截的请求
+        // 排除不需要拦截的请求，可以通过配置中心动态刷新
         if (path.contains("/admin")
                 || path.contains("/redis")
                 || path.contains("/hello")
