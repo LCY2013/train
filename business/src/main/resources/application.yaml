@@ -1,0 +1,33 @@
+server:
+  port: 8002
+  servlet:
+    context-path: /business
+
+# 数据库配置
+spring:
+  application:
+    name: business
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/train_business?characterEncoding=UTF8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      password: 123456
+
+# mybatis 配置
+mybatis:
+  mapper-locations: classpath:/mapper/**/*.xml
+  configuration:
+    local-cache-scope: statement  # 配置为statement，即关闭一级缓存
+
+logging:
+  level:
+    org.fufeng.train.member.mapper: trace
+
+# rocketmq
+#rocketmq.name-server=http://localhost:9876
+#rocketmq.producer.group=default
