@@ -1,4 +1,4 @@
-package org.fufeng.train.common.config;// package com.jiawa.train.common.config;
+package org.fufeng.train.common.config;// package org.fufeng.train.common.config;
 //
 // import com.fasterxml.jackson.databind.ObjectMapper;
 // import com.fasterxml.jackson.databind.module.SimpleModule;
