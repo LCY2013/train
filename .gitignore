@@ -57,3 +57,5 @@ pnpm-debug.log*
 *.sw?
 
 word*
+
+docker-compose

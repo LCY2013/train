@@ -9,9 +9,13 @@ spring:
         server-addr: 127.0.0.1:8848 # nacos server地址
         file-extension: properties # 配置中心文件后缀，默认properties
         namespace: train # nacos命名空间
+        username: nacos
+        password: nacos
       discovery:
         server-addr: 127.0.0.1:8848 # nacos server注册中心地址
         namespace: train
+        username: nacos
+        password: nacos
 seata:
   registry:
     type: nacos # seata注册中心，要和seata server的application.yml配置保持一致
