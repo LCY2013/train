@@ -1,27 +1,56 @@
-server:
-  port: 8000
+#server:
+#  port: 8000
+#
+##  路由转发，将/member/..的请求转发到member模块
+#spring:
+#  cloud:
+#    gateway:
+#      globalcors:
+#        cors-configurations:
+#          '[/**]':
+#            allowedOriginPatterns:
+#              - "*"
+#            allowedMethods:
+#              - "*"
+#            allowedHeaders:
+#              - "*"
+#            allowCredentials: true
+#            maxAge: 3600
+#      routes:
+#        - id: member_route
+#          uri:
+#            http://127.0.0.1:8001
+#            # lb://member
+#          predicates:
+#            - Path=/member/**
+##          filters:
+##            - StripPrefix=1
+#        - id: business_route
+#          uri:
+#            http://127.0.0.1:8002
+#          # lb://business
+#          predicates:
+#            - Path=/business/**
+#        - id: batch_route
+#          uri:
+#            http://127.0.0.1:8003
+#          # lb://batch
+#          predicates:
+#            - Path=/batch/**
 
-#  路由转发，将/member/..的请求转发到member模块
+#  https://sca.aliyun.com/zh-cn/docs/2022.0.0.0/user-guide/nacos/quick-start/#%E6%8E%A5%E5%85%A5-nacos-config
 spring:
   cloud:
-    gateway:
-      globalcors:
-        cors-configurations:
-          '[/**]':
-            allowedOriginPatterns:
-              - "*"
-            allowedMethods:
-              - "*"
-            allowedHeaders:
-              - "*"
-            allowCredentials: true
-            maxAge: 3600
-      routes:
-        - id: member_route
-          uri:
-            http://127.0.0.1:8001
-            # lb://member
-          predicates:
-            - Path=/member/**
-#          filters:
-#            - StripPrefix=1
+    nacos:
+      serverAddr: 127.0.0.1:8848
+      config:
+        username: nacos
+        password: nacos
+        namespace: train # nacos命名空间
+      discovery:
+        namespace: train
+        username: nacos
+        password: nacos
+  config:
+    import:
+      - nacos:gateway-dev.yaml?refresh=true

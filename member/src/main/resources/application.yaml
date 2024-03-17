@@ -1,22 +1,39 @@
-server:
-  port: 8001
-  servlet:
-    context-path: /member
-
-# 数据库配置
-spring:
-  datasource:
-    url: jdbc:mysql://127.0.0.1:3306/train_member?characterEncoding=UTF8&autoReconnect=true&serverTimezone=Asia/Shanghai
-    username: root
-    password: 123456
-    driver-class-name: com.mysql.cj.jdbc.Driver
-
-# mybatis 配置
-mybatis:
-  mapper-locations: classpath:/mapper/**/*.xml
-logging:
-  level:
-    org.fufeng.train.member.mapper: trace
+#server:
+#  port: 8001
+#  servlet:
+#    context-path: /member
+#
+## 数据库配置
+#spring:
+#  datasource:
+#    url: jdbc:mysql://127.0.0.1:3306/train_member?characterEncoding=UTF8&autoReconnect=true&serverTimezone=Asia/Shanghai
+#    username: root
+#    password: 123456
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#
+## mybatis 配置
+#mybatis:
+#  mapper-locations: classpath:/mapper/**/*.xml
+#logging:
+#  level:
+#    org.fufeng.train.member.mapper: trace
 
 test:
   nacos: Member
+
+#  https://sca.aliyun.com/zh-cn/docs/2022.0.0.0/user-guide/nacos/quick-start/#%E6%8E%A5%E5%85%A5-nacos-config
+spring:
+  cloud:
+    nacos:
+      serverAddr: 127.0.0.1:8848
+      config:
+        username: nacos
+        password: nacos
+        namespace: train # nacos命名空间
+      discovery:
+        namespace: train
+        username: nacos
+        password: nacos
+  config:
+    import:
+      - nacos:member-dev.yaml?refresh=true
