@@ -17,3 +17,6 @@ mybatis:
 logging:
   level:
     org.fufeng.train.member.mapper: trace
+
+test:
+  nacos: Member

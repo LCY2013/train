@@ -25,21 +25,21 @@
         </dependency>
 
         <!--远程调用openfeign-->
-        <!--<dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>-->
+        </dependency>
         <!--openfeign默认使用的是loadBalance的负载均衡器  -->
-       <!-- <dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-loadbalancer</artifactId>
-        </dependency>-->
+        </dependency>
 
-        <!--<dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
--->
+
         <!--暂不使用redisson，演示机是macbook m2，经常会启动失败，报错：连接不到redis或获取不到连接-->
         <!--<dependency>-->
         <!--    <groupId>org.redisson</groupId>-->
@@ -47,16 +47,16 @@
         <!--</dependency>-->
 
         <!-- 限流熔断 -->
-       <!-- <dependency>
+        <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
-        </dependency>-->
+        </dependency>
 
         <!-- sentinel + nacos -->
-        <!--<dependency>
+        <dependency>
             <groupId>com.alibaba.csp</groupId>
             <artifactId>sentinel-datasource-nacos</artifactId>
-        </dependency>-->
+        </dependency>
 
         <!-- 图形验证码 -->
         <dependency>
@@ -64,11 +64,11 @@
             <artifactId>kaptcha</artifactId>
         </dependency>
 
-        <!--&lt;!&ndash;RocketMQ&ndash;&gt;-->
-        <!--<dependency>-->
-        <!--    <groupId>org.apache.rocketmq</groupId>-->
-        <!--    <artifactId>rocketmq-spring-boot-starter</artifactId>-->
-        <!--</dependency>-->
+        <!--RocketMQ-->
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-spring-boot-starter</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
