@@ -43,6 +43,8 @@
 
 #  https://sca.aliyun.com/zh-cn/docs/2022.0.0.0/user-guide/nacos/quick-start/#%E6%8E%A5%E5%85%A5-nacos-config
 spring:
+  application:
+    name: batch
   cloud:
     nacos:
       serverAddr: 127.0.0.1:8848
