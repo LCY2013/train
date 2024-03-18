@@ -17,6 +17,13 @@
 #      host: 127.0.0.1
 #      port: 6379
 #      password: 123456
+#  cache:
+#  type: redis
+#  redis:
+#    use-key-prefix: true
+#    key-prefix: train_cache_business
+#    cache-null-values: false
+#    time-to-live: 60s
 #
 ## mybatis 配置
 #mybatis:
